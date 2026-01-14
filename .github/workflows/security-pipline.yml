@@ -23,3 +23,13 @@ jobs:
           image-ref: demo-app:latest
           severity: CRITICAL
           exit-code: 1
+
+
+      - name: Login to GitHub Container Registry
+        run: echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Push image to GHCR
+        if: success()
+        run: |
+          docker tag demo-app ghcr.io/${{ github.repository }}/demo-app:latest
+          docker push ghcr.io/${{ github.repository }}/demo-app:latest
