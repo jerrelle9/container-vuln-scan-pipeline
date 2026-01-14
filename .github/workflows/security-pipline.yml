@@ -33,3 +33,7 @@ jobs:
         run: |
           docker tag demo-app ghcr.io/${{ github.repository }}/demo-app:latest
           docker push ghcr.io/${{ github.repository }}/demo-app:latest
+
+
+
+build a ci cd and deposit in a ecr
