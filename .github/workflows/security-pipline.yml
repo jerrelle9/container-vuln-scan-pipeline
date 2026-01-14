@@ -3,6 +3,7 @@ name: Container Vulnerability Scanner Pipeline
 permissions:
   contents: read
   packages: write
+  security-events: write
 
 
 on: 
