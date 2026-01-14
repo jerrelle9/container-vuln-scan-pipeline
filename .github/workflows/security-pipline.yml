@@ -31,8 +31,8 @@ jobs:
       - name: Push image to GHCR
         if: success()
         run: |
-          docker tag demo-app ghcr.io/${{ github.repository }}/demo-app:latest
-          docker push ghcr.io/${{ github.repository }}/demo-app:latest
+          docker tag demo-app ghcr.io/${{ github.repository_owner }}/demo-app:latest
+          docker push ghcr.io/${{ github.repository_owner }}/demo-app:latest
 
 
 
